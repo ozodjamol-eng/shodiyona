@@ -1,0 +1,29 @@
+{
+ "updated": "2026-10-26",
+ "cats": [
+  {"id":"mehmonxona","t":{"cy":"Меҳмонхона","la":"Mehmonxona","ru":"Гостиная"},"i":"🛋"},
+  {"id":"yumshoq","t":{"cy":"Юмшоқ мебель","la":"Yumshoq mebel","ru":"Мягкая мебель"},"i":"🪑"},
+  {"id":"kafe","t":{"cy":"Кафе ва ошхона","la":"Kafe va oshxona","ru":"Кафе и кухня"},"i":"🍽"},
+  {"id":"ofis","t":{"cy":"Офис","la":"Ofis","ru":"Офис"},"i":"💼"},
+  {"id":"talim","t":{"cy":"Таълим","la":"Ta'lim","ru":"Образование"},"i":"🎓"},
+  {"id":"tibbiyot","t":{"cy":"Тиббиёт","la":"Tibbiyot","ru":"Медицина"},"i":"🏥"}
+ ],
+ "items": [
+  {"id":1,"cat":"yumshoq","img":"u10","t":{"cy":"Юмшоқ мебель тўплами","la":"Yumshoq mebel to'plami","ru":"Комплект мягкой мебели"},"d":{"cy":"Диван, 2 та кресло ва журнал столи","la":"Divan, 2 ta kreslo va jurnal stoli","ru":"Диван, 2 кресла и журнальный столик"},"m":"metal_soft","price":null},
+  {"id":2,"cat":"yumshoq","img":"u06","t":{"cy":"Металл каркасли кресло","la":"Metall karkasli kreslo","ru":"Кресло на металлокаркасе"},"d":{"cy":"Чарм ўриндиқ, лофт услуби","la":"Charm o'rindiq, loft uslubi","ru":"Кожаное сиденье, стиль лофт"},"m":"metal_soft","price":null},
+  {"id":3,"cat":"mehmonxona","img":"u03","t":{"cy":"Юмшоқ банкетка","la":"Yumshoq banketka","ru":"Мягкая банкетка"},"d":{"cy":"Пойабзал учун иккита токчаси бор","la":"Poyabzal uchun ikkita tokchasi bor","ru":"С двумя полками для обуви"},"m":"metal_soft","price":null},
+  {"id":4,"cat":"mehmonxona","img":"u09","t":{"cy":"ТВ тумба","la":"TV tumba","ru":"ТВ-тумба"},"d":{"cy":"Икки қаватли токча","la":"Ikki qavatli tokcha","ru":"Две полки разного уровня"},"m":"metal_wood","price":null},
+  {"id":5,"cat":"mehmonxona","img":"u07","t":{"cy":"Журнал столи","la":"Jurnal stoli","ru":"Журнальный столик"},"d":{"cy":"Пастки токчаси билан","la":"Pastki tokchasi bilan","ru":"С нижней полкой"},"m":"metal_wood","price":null},
+  {"id":6,"cat":"mehmonxona","img":"k31","t":{"cy":"Куб стеллаж","la":"Kub stellaj","ru":"Стеллаж с кубами"},"d":{"cy":"Китоб ва безаклар учун","la":"Kitob va bezaklar uchun","ru":"Для книг и декора"},"m":"metal_wood","price":null},
+  {"id":7,"cat":"kafe","img":"u01","t":{"cy":"Стол ва 6 та кресло","la":"Stol va 6 ta kreslo","ru":"Стол и 6 кресел"},"d":{"cy":"Кафе ва ресторанлар учун","la":"Kafe va restoranlar uchun","ru":"Для кафе и ресторанов"},"m":"metal_wood","price":null},
+  {"id":8,"cat":"kafe","img":"u13","t":{"cy":"Ошхона учун стол ва 4 стул","la":"Oshxona uchun stol va 4 stul","ru":"Кухонный стол и 4 стула"},"d":{"cy":"Уй ошхонаси ва ошхоналар учун","la":"Uy oshxonasi va oshxonalar uchun","ru":"Для кухни и столовых"},"m":"metal_wood","price":null},
+  {"id":9,"cat":"kafe","img":"u12","t":{"cy":"Юмшоқ стул","la":"Yumshoq stul","ru":"Мягкий стул"},"d":{"cy":"Кафе ва тўйхоналар учун","la":"Kafe va to'yxonalar uchun","ru":"Для кафе и банкетных залов"},"m":"metal_soft","price":null},
+  {"id":10,"cat":"ofis","img":"u05","t":{"cy":"Мажлислар столи","la":"Majlislar stoli","ru":"Стол для переговоров"},"d":{"cy":"Мармар рангли устки қисм","la":"Marmar rangli ustki qism","ru":"Столешница под мрамор"},"m":"metal_wood","price":null},
+  {"id":11,"cat":"ofis","img":"u16","t":{"cy":"Офис стули","la":"Ofis stuli","ru":"Офисный стул"},"d":{"cy":"Хром каркас, юмшоқ ўриндиқ","la":"Xrom karkas, yumshoq o'rindiq","ru":"Хромированный каркас, мягкое сиденье"},"m":"metal_soft","price":null},
+  {"id":12,"cat":"tibbiyot","img":"u08","t":{"cy":"3 ўринли ўриндиқ","la":"3 o'rinli o'rindiq","ru":"Секция на 3 места"},"d":{"cy":"Кутиш заллари учун","la":"Kutish zallari uchun","ru":"Для залов ожидания"},"m":"metal_soft","price":null},
+  {"id":13,"cat":"tibbiyot","img":"u11","t":{"cy":"Оқ стул","la":"Oq stul","ru":"Белый стул"},"d":{"cy":"Шифохона ва клиникалар учун","la":"Shifoxona va klinikalar uchun","ru":"Для больниц и клиник"},"m":"metal_soft","price":null},
+  {"id":14,"cat":"talim","img":"k27","t":{"cy":"Икки кишилик парта","la":"Ikki kishilik parta","ru":"Парта двухместная"},"d":{"cy":"Мактаб ва ўқув марказлари учун","la":"Maktab va o'quv markazlari uchun","ru":"Для школ и учебных центров"},"m":"metal_wood","price":null},
+  {"id":15,"cat":"talim","img":"u14","t":{"cy":"Ўқувчи стули (ёғоч)","la":"O'quvchi stuli (yog'och)","ru":"Ученический стул (дерево)"},"d":{"cy":"Пишиқ металл оёқлар","la":"Pishiq metall oyoqlar","ru":"Прочные металлические ножки"},"m":"metal_wood","price":null},
+  {"id":16,"cat":"talim","img":"u15","t":{"cy":"Ўқувчи стули (юмшоқ)","la":"O'quvchi stuli (yumshoq)","ru":"Ученический стул (мягкий)"},"d":{"cy":"Юмшоқ ўриндиқ ва суянчиқ","la":"Yumshoq o'rindiq va suyanchiq","ru":"Мягкое сиденье и спинка"},"m":"metal_soft","price":null}
+ ]
+}

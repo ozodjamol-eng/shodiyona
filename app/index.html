@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="uz-Cyrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Shodiyona Mebel — Каталог</title>
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="../img/icon.png">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+@font-face{font-family:SD;src:url(fonts/InterDisplay-ExtraBold.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:SI;src:url(fonts/Inter-Medium.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:SI;src:url(fonts/Inter-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:SI;src:url(fonts/Inter-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--cream:#FBF8F1;--sand:#F3EBDD;--disc:#EFE4D2;--green:#1F3A28;--oak:#B8814A;--walnut:#74421E;--ink:#1d2a21;--muted:#7a7366;
+  --safe-b:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--cream)}
+body{font-family:SI,system-ui,-apple-system,sans-serif;font-weight:500;color:var(--ink);min-height:100vh;
+  background:linear-gradient(170deg,#fff 0%,var(--cream) 40%,var(--sand) 100%) fixed;-webkit-font-smoothing:antialiased}
+.wrap{max-width:520px;margin:0 auto;padding:14px 16px calc(110px + var(--safe-b))}
+/* top */
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand b{display:block;font:800 17px SD,sans-serif;letter-spacing:.4px;color:var(--green)}
+.brand small{display:block;font:600 9.5px SI,sans-serif;letter-spacing:3px;color:var(--oak);text-transform:uppercase}
+.lang{display:flex;gap:4px}
+.lang button{font:600 11.5px SI,sans-serif;border:1.5px solid rgba(31,58,40,.22);background:transparent;color:var(--green);border-radius:20px;padding:5px 9px}
+.lang button.on{background:var(--green);color:var(--cream);border-color:var(--green)}
+/* hero */
+.hero{margin:18px 0 6px;padding:20px 18px 18px;border-radius:22px;background:var(--green);color:var(--cream);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:26px solid rgba(184,129,74,.22)}
+.hero .k{font:600 10.5px SI,sans-serif;letter-spacing:3.5px;color:#D9BE97;text-transform:uppercase}
+.hero h1{font:800 25px/1.08 SD,sans-serif;letter-spacing:-.4px;margin:8px 0 0;position:relative;z-index:1}
+.hero h1 em{font-style:normal;color:#E7C08E}
+.steps{display:flex;align-items:center;gap:4px;margin-top:14px;position:relative;z-index:1;flex-wrap:nowrap}
+.st{display:flex;align-items:center;gap:6px;background:rgba(251,248,241,.1);border:1px solid rgba(251,248,241,.18);border-radius:30px;padding:4px 9px 4px 4px;font:700 11.5px SI,sans-serif;white-space:nowrap}
+.st i{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--oak);display:grid;place-items:center;font-size:11px;color:#fff}
+.st.last{background:var(--oak);border-color:var(--oak)}.st.last i{background:var(--green)}
+.arr{color:#D9BE97;font-weight:700}
+.hero .photo{margin-top:14px;display:flex;align-items:center;gap:10px;width:100%;border:0;border-radius:14px;padding:11px 13px;
+  background:var(--cream);color:var(--green);font:700 14px SI,sans-serif;text-align:left;position:relative;z-index:1}
+.hero .photo span{flex:1}.hero .photo em{font-style:normal;color:var(--oak);font-size:18px}
+/* cats */
+.cats{display:flex;gap:8px;overflow-x:auto;margin:16px -16px 4px;padding:2px 16px 8px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:0 0 auto;display:flex;align-items:center;gap:6px;border:1.5px solid rgba(31,58,40,.16);background:#fff;color:var(--green);
+  border-radius:30px;padding:8px 14px;font:700 13px SI,sans-serif;white-space:nowrap}
+.cat.on{background:var(--green);color:var(--cream);border-color:var(--green)}
+h2{font:800 20px SD,sans-serif;color:var(--green);letter-spacing:-.2px;margin:12px 2px 10px;display:flex;justify-content:space-between;align-items:baseline}
+h2 small{font:600 12px SI,sans-serif;color:var(--muted)}
+/* grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(184,129,74,.18);
+  box-shadow:0 10px 24px -18px rgba(116,66,30,.45);text-align:left;padding:0;font:inherit;color:inherit;display:flex;flex-direction:column;
+  animation:up .35s ease both}
+.card:active{transform:scale(.98)}
+.card .im{aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,#fff 0%,var(--cream) 55%,var(--disc) 100%);display:grid;place-items:center;padding:12px;position:relative}
+.card .im img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 10px rgba(70,45,20,.18))}
+.card .tag{position:absolute;left:8px;top:8px;font:700 9.5px SI,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--walnut);
+  background:rgba(255,255,255,.85);border-radius:20px;padding:3px 8px}
+.card .tx{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card b{font:700 14px/1.2 SI,sans-serif;color:var(--green)}
+.card .pr{margin-top:auto;font:700 12.5px SI,sans-serif;color:var(--oak)}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* banner */
+.ban{margin-top:18px;border-radius:18px;padding:16px;background:#fff;border:1.5px dashed rgba(184,129,74,.55);display:flex;gap:12px;align-items:center}
+.ban .ic{flex:0 0 46px;height:46px;border-radius:14px;background:var(--disc);display:grid;place-items:center;font-size:22px}
+.ban b{display:block;font:700 14.5px SI,sans-serif;color:var(--green)}
+.ban small{display:block;font:500 12.5px SI,sans-serif;color:var(--muted);margin-top:3px}
+.foot{text-align:center;margin-top:22px;font:500 11.5px SI,sans-serif;color:var(--muted)}
+.foot b{color:var(--green)}
+/* detail sheet */
+.sheet{position:fixed;inset:0;z-index:20;background:rgba(20,30,22,.45);opacity:0;pointer-events:none;transition:opacity .2s}
+.sheet.on{opacity:1;pointer-events:auto}
+.panel{position:absolute;left:0;right:0;bottom:0;max-height:92vh;overflow:auto;background:var(--cream);border-radius:26px 26px 0 0;
+  transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.9,.2,1);padding:0 0 calc(120px + var(--safe-b))}
+.sheet.on .panel{transform:none}
+.panel .grab{width:44px;height:5px;border-radius:3px;background:rgba(31,58,40,.2);margin:10px auto 0}
+.panel .big{margin:10px 16px 0;border-radius:22px;aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,#fff 0%,var(--cream) 55%,var(--disc) 100%);
+  display:grid;place-items:center;padding:22px;border:1px solid rgba(184,129,74,.2)}
+.panel .big img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 18px 14px rgba(70,45,20,.2))}
+.panel .in{padding:16px 18px 0;max-width:520px;margin:0 auto}
+.panel .k{font:700 10.5px SI,sans-serif;letter-spacing:3px;color:var(--oak);text-transform:uppercase}
+.panel h3{font:800 24px/1.1 SD,sans-serif;color:var(--green);margin:6px 0 4px;letter-spacing:-.3px}
+.panel .d{font:500 14px/1.4 SI,sans-serif;color:var(--muted)}
+.price{margin:14px 0 4px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:16px;padding:12px 14px;border:1px solid rgba(184,129,74,.22)}
+.price span{font:600 12.5px SI,sans-serif;color:var(--muted)}.price b{font:800 18px SD,sans-serif;color:var(--oak)}
+.feats{list-style:none;margin:12px 0 0;display:flex;flex-direction:column;gap:9px}
+.feats li{display:flex;gap:10px;align-items:center;font:600 14px SI,sans-serif;color:var(--ink)}
+.feats li i{flex:0 0 26px;height:26px;border-radius:50%;background:var(--oak);color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px}
+.ghost{margin-top:16px;width:100%;border:1.5px solid var(--green);background:transparent;color:var(--green);border-radius:14px;padding:12px;font:700 14px SI,sans-serif}
+/* fallback bottom button (outside Telegram) */
+.fb{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(12px + var(--safe-b));background:linear-gradient(transparent,var(--cream) 30%);display:none}
+.fb button{width:100%;max-width:520px;display:block;margin:0 auto;border:0;border-radius:16px;padding:15px;background:var(--green);color:var(--cream);font:700 16px SI,sans-serif;
+  box-shadow:0 10px 24px -10px rgba(31,58,40,.6)}
+.toast{position:fixed;left:50%;bottom:calc(90px + var(--safe-b));transform:translateX(-50%);background:var(--green);color:var(--cream);font:600 13px SI,sans-serif;
+  padding:10px 16px;border-radius:30px;opacity:0;transition:opacity .2s;z-index:40;pointer-events:none}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><img src="img/mark.png" alt=""><div><b>SHODIYONA</b><small>Mebel Markazi</small></div></div>
+    <div class="lang"><button data-l="cy" class="on">Ўзб</button><button data-l="la">O'zb</button><button data-l="ru">Рус</button></div>
+  </div>
+
+  <section class="hero">
+    <div class="k" data-t="kicker"></div>
+    <h1 data-t="h1" data-html></h1>
+    <div class="steps">
+      <span class="st"><i>1</i><span data-t="s1"></span></span><span class="arr">→</span>
+      <span class="st"><i>2</i><span data-t="s2"></span></span><span class="arr">→</span>
+      <span class="st last"><i>3</i><span data-t="s3"></span></span>
+    </div>
+    <button class="photo" id="photoBtn"><span data-t="photo"></span><em>📷</em></button>
+  </section>
+
+  <nav class="cats" id="cats"></nav>
+  <h2><span id="catTitle"></span><small id="count"></small></h2>
+  <div class="grid" id="grid"></div>
+
+  <div class="ban" id="ban">
+    <div class="ic">✍️</div>
+    <div><b data-t="mgr"></b><small>@ShodiyonaMebelUz · +998 77 923 01 91</small></div>
+  </div>
+  <div class="foot"><b>Shodiyona Mebel Markazi</b> · <span data-t="addr"></span></div>
+</div>
+
+<div class="sheet" id="sheet"><div class="panel" id="panel">
+  <div class="grab"></div>
+  <div class="big"><img id="dImg" alt=""></div>
+  <div class="in">
+    <div class="k" id="dCat"></div>
+    <h3 id="dTitle"></h3>
+    <div class="d" id="dDesc"></div>
+    <div class="price"><span data-t="price"></span><b id="dPrice"></b></div>
+    <ul class="feats" id="dFeats"></ul>
+    <button class="ghost" id="dAsk" data-t="ask"></button>
+  </div>
+</div></div>
+
+<div class="fb" id="fb"><button id="fbBtn"></button></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const tg = window.Telegram && Telegram.WebApp && Telegram.WebApp.initData !== undefined ? Telegram.WebApp : null;
+const IN_TG = !!(tg && tg.initData);
+const BOT = 'https://t.me/ShodiyonaMebelUzBot';
+const MGR = 'https://t.me/ShodiyonaMebelUz';
+const L = {
+ cy:{kicker:"Ўз ишлаб чиқаришимиз",h1:"Мебель — ишлаб чиқарувчидан, <em>воситачисиз</em>",s1:"Танланг",s2:"Буюртма",s3:"Ясаймиз",
+   photo:"Ёққан мебель расмини юборинг — ясаб берамиз",all:"Ҳаммаси",pcs:"та модель",ask_price:"Нархини сўранг",from:"дан",
+   order:"📐 Буюртма бериш",price:"Нархи",ask:"✍️ Менежерга ёзиш",mgr:"Саволингиз борми? Менежерга ёзинг",
+   addr:"Андижон, 2-Андижон йўли",
+   f1:"Ишлаб чиқарувчидан — воситачисиз",f2:"Ўлчам ва ранг — буюртмангиз бўйича",f3:"Ўлчов — бепул",
+   m_metal_wood:"Металл каркас + ЛДСП / ёғоч",m_metal_soft:"Металл каркас + юмшоқ қоплама",
+   sent:"Ариза юборилди ✅",notg:"Ботда очинг"},
+ la:{kicker:"O'z ishlab chiqarishimiz",h1:"Mebel — ishlab chiqaruvchidan, <em>vositachisiz</em>",s1:"Tanlang",s2:"Buyurtma",s3:"Yasaymiz",
+   photo:"Yoqqan mebel rasmini yuboring — yasab beramiz",all:"Hammasi",pcs:"ta model",ask_price:"Narxini so'rang",from:"dan",
+   order:"📐 Buyurtma berish",price:"Narxi",ask:"✍️ Menejerga yozish",mgr:"Savolingiz bormi? Menejerga yozing",
+   addr:"Andijon, 2-Andijon yo'li",
+   f1:"Ishlab chiqaruvchidan — vositachisiz",f2:"O'lcham va rang — buyurtmangiz bo'yicha",f3:"O'lchov — bepul",
+   m_metal_wood:"Metall karkas + LDSP / yog'och",m_metal_soft:"Metall karkas + yumshoq qoplama",
+   sent:"Ariza yuborildi ✅",notg:"Botda oching"},
+ ru:{kicker:"Собственное производство",h1:"Мебель — от производителя, <em>без посредников</em>",s1:"Выберите",s2:"Заказ",s3:"Сделаем",
+   photo:"Пришлите фото мебели, которая нравится — сделаем такую же",all:"Все",pcs:"моделей",ask_price:"Цена по запросу",from:"от ",
+   order:"📐 Заказать",price:"Цена",ask:"✍️ Написать менеджеру",mgr:"Есть вопросы? Напишите менеджеру",
+   addr:"Андижан, 2-Андижанская дорога",
+   f1:"От производителя — без посредников",f2:"Размер и цвет — под ваш заказ",f3:"Замер — бесплатно",
+   m_metal_wood:"Металлокаркас + ЛДСП / дерево",m_metal_soft:"Металлокаркас + мягкая обивка",
+   sent:"Заявка отправлена ✅",notg:"Откройте в боте"}
+};
+let lang = 'cy', DATA = null, CAT = 'all', CUR = null;
+try { const s = localStorage.getItem('shl_app'); if (s && L[s]) lang = s; } catch (e) {}
+const $ = id => document.getElementById(id);
+const t = k => L[lang][k];
+const money = p => p == null ? t('ask_price') : ({cy: fmt(p) + ' сўмдан', la: fmt(p) + " so'mdan", ru: 'от ' + fmt(p) + ' сум'})[lang];
+const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+function applyLang() {
+  document.documentElement.lang = {cy:'uz-Cyrl',la:'uz-Latn',ru:'ru'}[lang];
+  document.querySelectorAll('[data-t]').forEach(e => { const v = t(e.dataset.t); if (v == null) return; if (e.dataset.html !== undefined) e.innerHTML = v; else e.textContent = v; });
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === lang));
+  $('fbBtn').textContent = CUR ? t('order') : t('notg');
+  if (DATA) { renderCats(); renderGrid(); if (CUR) fillSheet(CUR); }
+  if (IN_TG && CUR) tg.MainButton.setText(t('order'));
+}
+function catName(id) { const c = DATA.cats.find(c => c.id === id); return c ? c.t[lang] : ''; }
+function renderCats() {
+  const all = [{id:'all', t:{cy:t('all'),la:t('all'),ru:t('all')}, i:'✨'}].concat(DATA.cats.filter(c => DATA.items.some(i => i.cat === c.id)));
+  $('cats').innerHTML = all.map(c => `<button class="cat${c.id === CAT ? ' on' : ''}" data-c="${c.id}">${c.i} ${c.t[lang]}</button>`).join('');
+  $('cats').querySelectorAll('.cat').forEach(b => b.onclick = () => { CAT = b.dataset.c; haptic('light'); renderCats(); renderGrid(); });
+}
+function renderGrid() {
+  const list = DATA.items.filter(i => CAT === 'all' || i.cat === CAT);
+  $('catTitle').textContent = CAT === 'all' ? t('all') : catName(CAT);
+  $('count').textContent = list.length + ' ' + t('pcs');
+  $('grid').innerHTML = list.map((i, k) => `<button class="card" data-id="${i.id}" style="animation-delay:${k * 35}ms">
+    <div class="im"><span class="tag">${catName(i.cat)}</span><img src="img/${i.img}.webp" alt="" loading="lazy"></div>
+    <div class="tx"><b>${i.t[lang]}</b><span class="pr">${money(i.price)}</span></div></button>`).join('');
+  $('grid').querySelectorAll('.card').forEach(c => c.onclick = () => openItem(+c.dataset.id));
+}
+function fillSheet(i) {
+  $('dImg').src = `img/${i.img}.webp`; $('dCat').textContent = catName(i.cat); $('dTitle').textContent = i.t[lang];
+  $('dDesc').textContent = i.d[lang]; $('dPrice').textContent = money(i.price);
+  $('dFeats').innerHTML = [t('m_' + i.m), t('f1'), t('f2'), t('f3')].map((x, k) => `<li><i>${['◆','✓','✓','✓'][k]}</i>${x}</li>`).join('');
+}
+function openItem(id) {
+  CUR = DATA.items.find(i => i.id === id); if (!CUR) return;
+  fillSheet(CUR); $('sheet').classList.add('on'); haptic('light');
+  if (IN_TG) { tg.BackButton.show(); tg.MainButton.setParams({text: t('order'), color: '#1F3A28', text_color: '#FBF8F1', is_visible: true}); }
+  else { $('fb').style.display = 'block'; $('fbBtn').textContent = t('order'); }
+}
+function closeItem() {
+  CUR = null; $('sheet').classList.remove('on');
+  if (IN_TG) { tg.BackButton.hide(); tg.MainButton.hide(); } else { $('fb').style.display = 'none'; }
+}
+function send(obj) {
+  if (IN_TG) { haptic('success'); try { tg.sendData(JSON.stringify(obj)); } catch (e) { toast(t('notg')); } }
+  else { location.href = BOT + '?start=app'; }
+}
+function order() { if (!CUR) return; send({a: 'order', id: CUR.id, t: CUR.t.cy, img: CUR.img}); }
+function haptic(k) { try { if (!IN_TG) return; if (k === 'success') tg.HapticFeedback.notificationOccurred('success'); else tg.HapticFeedback.impactOccurred(k); } catch (e) {} }
+function toast(m) { const e = $('toast'); e.textContent = m; e.classList.add('on'); setTimeout(() => e.classList.remove('on'), 1800); }
+function openMgr() { if (IN_TG) tg.openTelegramLink(MGR); else location.href = MGR; }
+
+$('sheet').onclick = e => { if (e.target === $('sheet')) closeItem(); };
+$('dAsk').onclick = openMgr; $('ban').onclick = openMgr;
+$('photoBtn').onclick = () => send({a: 'photo'});
+$('fbBtn').onclick = () => CUR ? order() : (location.href = BOT);
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.l; try { localStorage.setItem('shl_app', lang); } catch (e) {} applyLang(); });
+
+if (IN_TG) {
+  tg.ready(); tg.expand();
+  try { tg.setHeaderColor('#FBF8F1'); tg.setBackgroundColor('#FBF8F1'); tg.setBottomBarColor && tg.setBottomBarColor('#FBF8F1'); } catch (e) {}
+  tg.BackButton.onClick(closeItem); tg.MainButton.onClick(order);
+  const lc = (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || '';
+  try { if (!localStorage.getItem('shl_app') && lc === 'ru') lang = 'ru'; } catch (e) {}
+}
+fetch('catalog.json?v=' + Date.now()).then(r => r.json()).then(d => { DATA = d; applyLang(); });
+applyLang();
+</script>
+</body>
+</html>
