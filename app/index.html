@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>Shodiyona Mebel — Каталог</title>
 <meta name="theme-color" content="#FBF8F1">
-<meta name="description" content="Мебель ишлаб чиқарувчидан — воситачисиз, арзонроқ. 16 модель, буюртма бот орқали. ☎️ +998 77 923 01 91">
+<meta name="description" content="Мебель ишлаб чиқарувчидан — воситачисиз, арзонроқ. 42 модель, буюртма бот орқали. ☎️ +998 77 923 01 91">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shodiyona Mebel Markazi">
 <meta property="og:title" content="Shodiyona Mebel — Каталог 🛋">
@@ -66,7 +66,15 @@ h2 small{font:600 12px SI,sans-serif;color:var(--muted)}
   animation:up .35s ease both}
 .card:active{transform:scale(.98)}
 .card .im{aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,#fff 0%,var(--cream) 55%,var(--disc) 100%);display:grid;place-items:center;padding:12px;position:relative}
-.card .im img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 10px rgba(70,45,20,.18))}
+.card .im{overflow:hidden}
+.card .im img{position:absolute;left:12px;top:26px;width:calc(100% - 24px);height:calc(100% - 38px);object-fit:contain;filter:drop-shadow(0 12px 10px rgba(70,45,20,.18))}
+.card .im.ph img{left:0;top:0}
+.card .im.ph{padding:0;background:var(--disc)}
+.card .im.ph img{width:100%;height:100%;object-fit:cover;filter:none}
+.card .tag,.card .nw{z-index:1}
+.card .im.w img{mix-blend-mode:multiply;filter:none}
+.card .nw{position:absolute;right:8px;top:8px;font:800 9.5px SI,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:#fff;
+  background:var(--oak);border-radius:20px;padding:3px 8px;box-shadow:0 4px 10px -4px rgba(116,66,30,.6)}
 .card .tag{position:absolute;left:8px;top:8px;font:700 9.5px SI,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--walnut);
   background:rgba(255,255,255,.85);border-radius:20px;padding:3px 8px}
 .card .tx{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
@@ -90,6 +98,9 @@ h2 small{font:600 12px SI,sans-serif;color:var(--muted)}
 .panel .big{margin:10px 16px 0;border-radius:22px;aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,#fff 0%,var(--cream) 55%,var(--disc) 100%);
   display:grid;place-items:center;padding:22px;border:1px solid rgba(184,129,74,.2)}
 .panel .big img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 18px 14px rgba(70,45,20,.2))}
+.panel .big.ph{aspect-ratio:auto;padding:0;overflow:hidden;background:var(--disc)}
+.panel .big.ph img{width:100%;max-height:70vh;object-fit:contain;filter:none;display:block}
+.panel .big.w img{mix-blend-mode:multiply;filter:none}
 .panel .in{padding:16px 18px 0;max-width:520px;margin:0 auto}
 .panel .k{font:700 10.5px SI,sans-serif;letter-spacing:3px;color:var(--oak);text-transform:uppercase}
 .panel h3{font:800 24px/1.1 SD,sans-serif;color:var(--green);margin:6px 0 4px;letter-spacing:-.3px}
@@ -166,21 +177,21 @@ const L = {
    addr:"Андижон, 2-Андижон йўли",
    f1:"Ишлаб чиқарувчидан — воситачисиз",f2:"Ўлчам ва ранг — буюртмангиз бўйича",f3:"Ўлчов — бепул",
    m_metal_wood:"Металл каркас + ЛДСП / ёғоч",m_metal_soft:"Металл каркас + юмшоқ қоплама",
-   sent:"Ариза юборилди ✅",notg:"Ботда очинг"},
+   sent:"Ариза юборилди ✅",notg:"Ботда очинг",nw:"Янги",sz:"Ўлчами (Б×Э×Ч)",cm:"см"},
  la:{kicker:"O'z ishlab chiqarishimiz",h1:"Mebel — ishlab chiqaruvchidan, <em>vositachisiz</em>",s1:"Tanlang",s2:"Buyurtma",s3:"Yasaymiz",
    photo:"Yoqqan mebel rasmini yuboring — yasab beramiz",all:"Hammasi",pcs:"ta model",ask_price:"Narxini so'rang",from:"dan",
    order:"📐 Buyurtma berish",price:"Narxi",ask:"✍️ Menejerga yozish",mgr:"Savolingiz bormi? Menejerga yozing",
    addr:"Andijon, 2-Andijon yo'li",
    f1:"Ishlab chiqaruvchidan — vositachisiz",f2:"O'lcham va rang — buyurtmangiz bo'yicha",f3:"O'lchov — bepul",
    m_metal_wood:"Metall karkas + LDSP / yog'och",m_metal_soft:"Metall karkas + yumshoq qoplama",
-   sent:"Ariza yuborildi ✅",notg:"Botda oching"},
+   sent:"Ariza yuborildi ✅",notg:"Botda oching",nw:"Yangi",sz:"O'lchami (B×E×Ch)",cm:"sm"},
  ru:{kicker:"Собственное производство",h1:"Мебель — от производителя, <em>без посредников</em>",s1:"Выберите",s2:"Заказ",s3:"Сделаем",
    photo:"Пришлите фото мебели, которая нравится — сделаем такую же",all:"Все",pcs:"моделей",ask_price:"Цена по запросу",from:"от ",
    order:"📐 Заказать",price:"Цена",ask:"✍️ Написать менеджеру",mgr:"Есть вопросы? Напишите менеджеру",
    addr:"Андижан, 2-Андижанская дорога",
    f1:"От производителя — без посредников",f2:"Размер и цвет — под ваш заказ",f3:"Замер — бесплатно",
    m_metal_wood:"Металлокаркас + ЛДСП / дерево",m_metal_soft:"Металлокаркас + мягкая обивка",
-   sent:"Заявка отправлена ✅",notg:"Откройте в боте"}
+   sent:"Заявка отправлена ✅",notg:"Откройте в боте",nw:"Новинка",sz:"Размер (В×Ш×Г)",cm:"см"}
 };
 let lang = 'cy', DATA = null, CAT = 'all', CUR = null;
 try { const s = localStorage.getItem('shl_app'); if (s && L[s]) lang = s; } catch (e) {}
@@ -208,14 +219,14 @@ function renderGrid() {
   $('catTitle').textContent = CAT === 'all' ? t('all') : catName(CAT);
   $('count').textContent = list.length + ' ' + t('pcs');
   $('grid').innerHTML = list.map((i, k) => `<button class="card" data-id="${i.id}" style="animation-delay:${k * 35}ms">
-    <div class="im"><span class="tag">${catName(i.cat)}</span><img src="img/${i.img}.webp" alt="" loading="lazy"></div>
+    <div class="im${i.v ? ' ' + i.v : ''}"><span class="tag">${catName(i.cat)}</span>${i.new ? `<span class="nw">${t('nw')}</span>` : ''}<img src="img/${i.img}.webp" alt="" loading="lazy"></div>
     <div class="tx"><b>${i.t[lang]}</b><span class="pr">${money(i.price)}</span></div></button>`).join('');
   $('grid').querySelectorAll('.card').forEach(c => c.onclick = () => openItem(+c.dataset.id));
 }
 function fillSheet(i) {
-  $('dImg').src = `img/${i.img}.webp`; $('dCat').textContent = catName(i.cat); $('dTitle').textContent = i.t[lang];
+  $('dImg').src = `img/${i.img}.webp`; $('dImg').parentNode.className = 'big' + (i.v ? ' ' + i.v : ''); $('dCat').textContent = catName(i.cat); $('dTitle').textContent = i.t[lang];
   $('dDesc').textContent = i.d[lang]; $('dPrice').textContent = money(i.price);
-  $('dFeats').innerHTML = [t('m_' + i.m), t('f1'), t('f2'), t('f3')].map((x, k) => `<li><i>${['◆','✓','✓','✓'][k]}</i>${x}</li>`).join('');
+  $('dFeats').innerHTML = [t('m_' + i.m)].concat(i.sz ? [t('sz') + ': ' + i.sz + ' ' + t('cm')] : [], [t('f1'), t('f2'), t('f3')]).map((x, k) => `<li><i>${k === 0 ? '◆' : (i.sz && k === 1 ? '📏' : '✓')}</i>${x}</li>`).join('');
 }
 function openItem(id) {
   CUR = DATA.items.find(i => i.id === id); if (!CUR) return;
